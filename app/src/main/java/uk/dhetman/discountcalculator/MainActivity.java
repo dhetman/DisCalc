@@ -1,15 +1,13 @@
 package uk.dhetman.discountcalculator;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
-    public final static String RESULT = "uk.dhetman.myfirstapp.RESULT";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void applyDiscount(View view){
-        Intent intent = new Intent(this, CalcDiscount.class);
         EditText priceText = (EditText) findViewById(R.id.price);
         EditText percentageText = (EditText) findViewById(R.id.percentage);
+        TextView calcResult = (TextView) findViewById(R.id.calcResult);
         if (priceText.getText().toString().equals("")){
             Toast.makeText(MainActivity.this, "Price field is empty", Toast.LENGTH_SHORT).show();
         }
@@ -35,16 +33,15 @@ public class MainActivity extends AppCompatActivity {
             double onePerc = price / 100;
             double PercOff = 100 - percentage;
             double result = onePerc * PercOff;
-            String finalResult = String.valueOf(result);
-            intent.putExtra(RESULT, "Discounted price: " + finalResult);
-            startActivity(intent);
+            double finalResult = Math.round(result * 100.0) / 100.0;
+            calcResult.setText(String.valueOf(finalResult));
         }
     }
 
     public void reverseDiscount(View view){
-        Intent intent = new Intent(this, RevDiscount.class);
         EditText priceText = (EditText) findViewById(R.id.price);
         EditText percentageText = (EditText) findViewById(R.id.percentage);
+        TextView calcResult = (TextView) findViewById(R.id.calcResult);
         if (priceText.getText().toString().equals("")){
             Toast.makeText(MainActivity.this, "Price field is empty", Toast.LENGTH_SHORT).show();
         }
@@ -60,9 +57,8 @@ public class MainActivity extends AppCompatActivity {
             double PercentDifference = 100 - OrigPercent;
             double OnePercPrice = DiscPrice / PercentDifference;
             double result = OnePercPrice * 100;
-            String finalResult = String.valueOf(result);
-            intent.putExtra(RESULT, "Original price: " + finalResult);
-            startActivity(intent);
+            double finalResult = Math.round(result * 100.0) / 100.0;
+            calcResult.setText(String.valueOf(finalResult));
         }
     }
 }

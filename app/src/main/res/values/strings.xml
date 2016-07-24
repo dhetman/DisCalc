@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Discount Calculator</string>
+    <string name="app_name">DisCalc</string>
     <string name="introText">Intro text will be here</string>
     <string name="app_disc_button">Apply Discount</string>
     <string name="rev_disc_button">Reverse Discount</string>

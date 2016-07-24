@@ -8,39 +8,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/introText"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_disc_button"
         android:onClick="applyDiscount"
-        android:layout_centerVertical="true"
+        android:id="@+id/button"
+        android:layout_below="@+id/price"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/button" />
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="false"
+        android:width="160dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:id="@+id/price"
-        android:layout_marginTop="102dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:hint="@string/num_field_price"
-        android:layout_alignRight="@+id/button"
-        android:layout_alignEnd="@+id/button"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:width="160dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -48,10 +39,11 @@
         android:ems="10"
         android:id="@+id/percentage"
         android:hint="@string/perc_discount"
-        android:layout_alignTop="@+id/price"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:width="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -59,8 +51,22 @@
         android:text="@string/rev_disc_button"
         android:onClick="reverseDiscount"
         android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/percentage"
+        android:width="160dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/calcResult"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:freezesText="true"
+        android:layout_marginBottom="20dp" />
 
 </RelativeLayout>

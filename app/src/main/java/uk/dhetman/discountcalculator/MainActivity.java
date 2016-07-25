@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             double PercOff = 100 - percentage;
             double result = onePerc * PercOff;
             double finalResult = Math.round(result * 100.0) / 100.0;
-            calcResult.setText(String.valueOf(finalResult));
+            calcResult.setText(String.valueOf("Discounted price:" + '\n' + finalResult));
         }
     }
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             double OnePercPrice = DiscPrice / PercentDifference;
             double result = OnePercPrice * 100;
             double finalResult = Math.round(result * 100.0) / 100.0;
-            calcResult.setText(String.valueOf(finalResult));
+            calcResult.setText(String.valueOf("Original price:" + '\n' + finalResult));
         }
     }
 }

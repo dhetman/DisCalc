@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/discalc.iml" filepath="$PROJECT_DIR$/discalc.iml" />
       <module fileurl="file://$PROJECT_DIR$/discount-calculator.iml" filepath="$PROJECT_DIR$/discount-calculator.iml" />
     </modules>
   </component>

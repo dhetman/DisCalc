@@ -1,8 +1,10 @@
 package uk.dhetman.discountcalculator;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "You cannot discount beyond 101%", Toast.LENGTH_SHORT).show();
         }
         else {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             double price = Double.valueOf(priceText.getText().toString());
             double percentage = Double.valueOf(percentageText.getText().toString());
             double onePerc = price / 100;
@@ -52,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "You cannot revert a discount beyond 100%", Toast.LENGTH_SHORT).show();
         }
         else {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
             double DiscPrice = Double.valueOf(priceText.getText().toString());
             double OrigPercent = Double.valueOf(percentageText.getText().toString());
             double PercentDifference = 100 - OrigPercent;
